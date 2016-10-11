@@ -56,8 +56,8 @@
 % Problems with or without  unique name
 % If empty string passed problem has no name otherwise problem
 % gets the name that is passed to macro
-\newcommand*{\problem}[1]{\stepcounter{ProblemNum} %
-   \anyproblem{Problem \theProblemNum. \; #1}}
+\newcommand*{\problem}[1]{	\stepcounter{ProblemNum} %
+							\anyproblem{Problem \theProblemNum. \; #1}}
 
 %-------------------------------Solution Block---------------------------------%
 
@@ -71,7 +71,7 @@
 }{\end{enumerate}}
 
 \newenvironment{arabicparts}[0]{%
-  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]%
+  \begin{enumerate}[label=\textbf{\arabic*})]%
 }{\end{enumerate}}
 
 \newcommand{\questionpart}[0]{\item}
@@ -88,7 +88,7 @@
 
 %----------------------------------Answer Box----------------------------------%
 
-\newcommand{\answerbox}[1]{%
+\newcommand{\answerbox}[1]{
 \begin{framed}
 \vspace{#1}
 \end{framed}}
@@ -108,7 +108,7 @@
 \newcommand\email[1]{\renewcommand\@email{#1}}
 \newcommand\@email{}
 
-% Class name
+% Class Name
 \newcommand\class[1]{\renewcommand\@class{#1}}
 \newcommand\@class{}
 
@@ -124,11 +124,11 @@
 \newcommand\type[1]{\renewcommand\@type{#1}}
 \newcommand\@type{}
 
-% The class section
+% Class Section
 \newcommand\clsection[1]{\renewcommand\@clsection{#1}}
 \newcommand\@clsection{}
 
-% The class section
+% Due Date
 \newcommand\duedate[1]{\renewcommand\@duedate{#1}}
 \newcommand\@duedate{}
 
@@ -169,7 +169,7 @@
 	\thispagestyle{plain}
 
 	\begin{center}
-	{\Large \@class{} \@type{} \@hwnum}
+	{\Large \@class{} \\ \@type{} \@hwnum}
 
 		% Whether or not a student email is given
 		\ifthenelse{\equal{\@email}{}}
